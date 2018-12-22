@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Proyecto3_Diplomado_Web_MVC_UASD_Registro.Models.Persona>
+
+<h2>Listados de Personas</h2>
+<div>
+    @{
+        var grid = new WebGrid(Model, defaultSort: "Nombre");
+    }
+
+    @grid.GetHtml(columns:grid.Columns(
+        grid.Column("Nombre", header:"Nombre"),
+        grid.Column("Apellido", header:"Apellido"),
+        grid.Column("Direccion", header:"Direccion"),
+        grid.Column("Telefono", header:"Telefono")
+        ))
+</div>
